@@ -1,0 +1,140 @@
+---
+title: "PCRSimPlot"
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# PCRSimPlot
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+PCRSimPlot is an R package for simulating and plotting PCR (Polymerase Chain Reaction) data. The package includes functions for generating PCR data based on specified parameters and visualizing the results.
+
+
+## Installation
+
+You can install the development version of PCRSimPlot like so:
+
+``` r
+You can install the development version of **PCRSimulation** from GitHub using the `devtools` package:
+
+```r
+# Install devtools if you haven't already
+# install.packages("devtools")
+
+# Install PCRSimPlot
+devtools::install_github("AttaLowe/PCRSimPlot")
+
+# Functions
+`simulate_pcr()`
+Simulates PCR data based on initial DNA concentration, amplification efficiency, and a fluorescence threshold.
+
+# Usage
+```r
+simulate_pcr(N0, E, threshold = 10000)
+
+```r
+Arguments:
+
+N0: Initial DNA concentration (numeric). For example, 10.
+E: Amplification efficiency (numeric, between 1 and 2). For example, 1.8.
+threshold: Fluorescence threshold for detecting the PCR signal (numeric, default is 10000).
+Returns:
+
+A list with two components:
+
+pcr_data: A data frame containing the simulated PCR data with columns Cycle, DNA, and Fluorescence.
+Ct: The cycle threshold (Ct) value at which the fluorescence exceeds the threshold.
+
+```
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example1}
+library(PCRSimPlot)
+result <- simulate_pcr(N0 = 10, E = 1.8)
+print(result$pcr_data)
+print(result$Ct)
+
+```
+```
+`plot_pcr()`
+Plots the simulated PCR data, showing fluorescence over cycles and the cycle threshold (Ct).
+# Usage
+```r
+plot_pcr(pcr_data, Ct)
+```r
+Arguments:
+
+pcr_data: A data frame containing the PCR data (typically from simulate_pcr()).
+Ct: The cycle threshold (Ct) value.
+Returns:
+
+A ggplot object visualizing the PCR data with a line plot of fluorescence over cycles, including a vertical line indicating the Ct valu
+
+```
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example2}
+
+result <- simulate_pcr(N0 = 10, E = 1.8)
+plot <- plot_pcr(result$pcr_data, result$Ct)
+print(plot)
+
+```
+```
+# Example
+Here’s a full example of how to use the package:
+```{r example3, message=TRUE}
+# Load the package
+library(PCRSimPlot)
+
+# Simulate PCR data
+result <- simulate_pcr(N0 = 10, E = 1.8)
+
+# Print the simulated data and Ct value
+print(result$pcr_data)
+print(result$Ct)
+
+# Plot the results
+plot <- plot_pcr(result$pcr_data, result$Ct)
+print(plot)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
