@@ -1,0 +1,57 @@
+---
+title: "PCRSimPlot"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{PCRSimPlot}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(PCRSimPlot)
+```
+
+## Introduction
+
+The PCRSimPlot package provides functions to simulate and plot PCR (Polymerase Chain Reaction) data. This vignette demonstrates how to use the simulate_pcr() and plot_pcr() functions to generate and visualize PCR data.
+
+## Simulate PCR Data
+
+Use the simulate_pcr() function to generate simulated PCR data. This function requires initial DNA concentration (N0), amplification efficiency (E), and an optional fluorescence threshold.
+
+```{r}
+result <- simulate_pcr(N0 = 10, E = 1.8)
+
+```
+
+The simulate_pcr() function returns a list with two components: pcr_data (a data frame of simulated PCR data) and Ct (the cycle threshold value).
+
+```{r}
+print(result$pcr_data)
+print(result$Ct)
+
+```
+
+## Plot PCR Data
+
+Use the plot_pcr() function to visualize the simulated PCR data. This function creates a ggplot object showing fluorescence over cycles, with a vertical line indicating the cycle threshold (Ct).
+
+```{r}
+plot <- plot_pcr(result$pcr_data, result$Ct)
+print(plot)
+
+```
+
+## Conclusion
+
+The PCRSimPlot package provides an easy way to simulate and visualize PCR data. Use the provided functions to gain insights into PCR dynamics and results.
+
+
+
