@@ -1,0 +1,23 @@
+#' @title Sample PCR Data
+#' @description A data frame containing simulated PCR data.
+#' @format A data frame with 40 rows and 2 columns:
+#' \describe{
+#'   \item{Cycle}{An integer indicating the PCR cycle number.}
+#'   \item{DNA}{A numeric value representing the DNA concentration.}
+#'   \item{Fluorescence}{A numeric value representing the fluorescence measurement.}
+#' }
+#' @source Simulated data for demonstration purposes.
+"sample_data"
+
+# Create a sample data frame
+sample_data <- data.frame(
+  Cycle = 1:40,
+  DNA = c(10, 32.4, 58.32, 104.976, 188.9568, 340.1222, 612.22, 1101.996, 1983.593, 3570.467,
+          6426.841, 11568.31, 20822.96, 37481.34, 67466.41, 121439.5, 218591.2, 393464.1, 708235.3, 1274824,
+          2294683, 4130429, 7434771, 1338259, 2408866, 4335959, 7804726, 1404851, 2528731, 4551716,
+          8193089, 1474756, 2654561, 4778209, 8600777, 1548140, 2786652, 5015973, 9028751, 1625175),
+  Fluorescence = c(1047.981, 1151.464, 1271.209, 1486.751, 1874.725, 2573.079, 3830.116, 6092.783, 10165.58, 17496.62,
+                   30692.5, 54445.07, 97199.69, 174158, 312683, 562028, 1010849, 1818727, 3272907, 5890431,
+                   10601970, 19082750, 34348150, 61825870, 111285800, 200313600, 360563600, 649013700, 1168224000, 2102802000,
+                   3785043000, 6813077000, 12263540000, 22074370000, 39733860000, 71520950000, 128737700000, 231727900000, 417110200000, 750798300000)
+)
