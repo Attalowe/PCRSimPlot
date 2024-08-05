@@ -19,3 +19,6 @@ Config/testthat/edition: 3
 URL: https://github.com/Attalowe/PCRSimPlot
 BugReports: https://github.com/Attalowe/PCRSimPlot/issues
 VignetteBuilder: knitr
+Depends: 
+    R (>= 2.10)
+LazyData: true
