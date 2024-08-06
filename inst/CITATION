@@ -1,0 +1,21 @@
+# inst/CITATION
+
+citHeader("To cite package 'PCRSimPlot' in publications use:")
+
+citEntry(
+  entry = "Manual",
+  title = "PCRSimPlot: Simulating and plotting PCR data",
+  author = person(given = "Atta", family = "Lowe"),
+  year = "2024",
+  note = "URL: https://github.com/Attalowe/PCRSimPlot"
+)
+
+citFooter("A BibTeX entry for LaTeX users is:")
+
+bibentry(
+  bibtype = "Manual",
+  title = "PCRSimPlot: Simulating and plotting PCR data",
+  author = "Lowe, Atta",
+  year = "2024",
+  note = "URL: https://github.com/Attalowe/PCRSimPlot"
+)
