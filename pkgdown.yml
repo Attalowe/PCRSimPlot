@@ -3,7 +3,7 @@ pkgdown: 2.1.0
 pkgdown_sha: ~
 articles:
   PCRSimPlot: PCRSimPlot.html
-last_built: 2024-08-06T22:23Z
+last_built: 2024-08-07T13:11Z
 urls:
   reference: https://attalowe.github.io/PCRSimPlot/reference
   article: https://attalowe.github.io/PCRSimPlot/articles
