@@ -15,6 +15,7 @@ knitr::opts_chunk$set(
 ```
 
 # PCRSimPlot
+![PCRSimPLOT Logo](man/figures/logo.png)
 
 <!-- badges: start -->
 <!-- badges: end -->
