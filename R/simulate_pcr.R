@@ -14,8 +14,8 @@ simulate_pcr <- function(N0, E, threshold = 10000) {
   cycles <- 40
   dna <- numeric(cycles)
   fluorescence <- numeric(cycles)
-  a <- rnorm(n=1, mean = 1000, sd = 3) # Random intercept value for fluorescence, drawn from a normal distribution.
-  b <- runif(1,1,5) # Random slope value for fluorescence, drawn from a uniform distribution between 1 and 5.
+  a <- stats::rnorm(n=1, mean = 1000, sd = 3) # Random intercept value for fluorescence, drawn from a normal distribution.
+  b <- stats::runif(1,1,5) # Random slope value for fluorescence, drawn from a uniform distribution between 1 and 5.
 
   # Initial fluorescence value at cycle 0
   dna[1] <- N0
