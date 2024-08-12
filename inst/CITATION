@@ -1,21 +1,23 @@
-# inst/CITATION
+# Code copied from citation()
+author <- meta$`Authors@R`
+if (length(author)) {
+    aar <- .read_authors_at_R_field(author)
+    author <- Filter(function(e) {
+        !(is.null(e$given) && is.null(e$family)) && !is.na(match("aut",
+            e$role))
+    }, aar)
+}
 
-citHeader("To cite package 'PCRSimPlot' in publications use:")
-
-citEntry(
-  entry = "Manual",
-  title = "PCRSimPlot: Simulating and plotting PCR data",
-  author = person(given = "Atta", family = "Lowe"),
-  year = "2024",
-  note = "URL: https://github.com/Attalowe/PCRSimPlot"
-)
-
-citFooter("A BibTeX entry for LaTeX users is:")
+if (is.null(meta$Date)) {
+  date <- format(Sys.Date(), "%Y")
+} else {
+  date <- format(as.Date(meta$Date), "%Y")
+}
 
 bibentry(
   bibtype = "Manual",
-  title = "PCRSimPlot: Simulating and plotting PCR data",
-  author = "Lowe, Atta",
-  year = "2024",
-  note = "URL: https://github.com/Attalowe/PCRSimPlot"
+  title   = paste0(meta$Package, ": ", gsub("[[:space:]]+", " ", meta$Title)),
+  author  = author,
+  year    = date,
+  url     = "https://Attalowe.github.io/PCRSimPlot/"
 )
