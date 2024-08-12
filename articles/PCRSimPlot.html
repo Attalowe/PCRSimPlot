@@ -139,7 +139,10 @@ function creates a ggplot object showing fluorescence over cycles, with
 a vertical line indicating the cycle threshold (Ct).</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">plot</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/plot_pcr.html">plot_pcr</a></span><span class="op">(</span><span class="va">result</span><span class="op">$</span><span class="va">pcr_data</span>, <span class="va">result</span><span class="op">$</span><span class="va">Ct</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">plot</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">plot</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning in geom_line(color = "blue"): All aesthetics have length 1, but the data has 40 rows.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Please consider using `annotate()` or provide this layer with data containing</span></span>
+<span><span class="co">#&gt;   a single row.</span></span></code></pre></div>
 <p><img src="PCRSimPlot_files/figure-html/unnamed-chunk-4-1.png" width="700"></p>
 </div>
 <div class="section level2">
