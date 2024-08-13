@@ -6,7 +6,7 @@ PCRSimPlot
 <!-- `gh_repo` is extracted via a special environment variable in GitHub Actions -->
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# {{ packagename }}: PCR Simulation and Plotting <img src="man/figures/logo.png" align="right" width="130"/>
+# PCRSimPlot : PCR Simulation and Plotting <img src="man/figures/logo.png" align="right" width="130"/>
 
 <!-- badges: start -->
 
@@ -19,13 +19,13 @@ coverage](https://codecov.io/gh/Attalowe/PCRSimPlot/branch/main/graph/badge.svg)
 
 <!-- badges: end -->
 
-**{{ packagename }}** is an R package for simulating and plotting PCR
+**PCRSimPlot** is an R package for simulating and plotting PCR
 (Polymerase Chain Reaction) data. It includes functions for generating
 PCR data from specified parameters and visualizing the results.
 
 ## Installation
 
-You can install the development version of **{{ packagename }}** from
+You can install the development version of **PCRSimPlot** from
 [GitHub](https://Attalowe.github.io/PCRSimPlot/).
 
 ``` r
@@ -52,14 +52,14 @@ library(PCRSimPlot)
 result <- simulate_pcr(N0 = 10, E = 1.8, threshold = 10000)
 head(result$pcr_data)
 #>   Cycle      DNA Fluorescence
-#> 1     1  10.0000     1034.304
-#> 2     2  32.4000     1117.033
-#> 3     3  58.3200     1212.761
-#> 4     4 104.9760     1385.073
-#> 5     5 188.9568     1695.234
-#> 6     6 340.1222     2253.524
+#> 1     1  10.0000     1012.832
+#> 2     2  32.4000     1050.521
+#> 3     3  58.3200     1094.132
+#> 4     4 104.9760     1172.632
+#> 5     5 188.9568     1313.932
+#> 6     6 340.1222     1568.271
 print(result$Ct)
-#> [1] 9
+#> [1] 10
 ```
 
 - `plot_pcr()` Plots the simulated PCR data, showing fluorescence over
@@ -87,11 +87,9 @@ This is a basic example which shows you how to solve a common problem:
 result <- simulate_pcr(N0 = 10, E = 1.8)
 plot <- plot_pcr(result$pcr_data, result$Ct)
 print(plot)
-#> Warning in geom_line(color = "blue"): All aesthetics have length 1, but the data has 40 rows.
-#> ℹ Did you mean to use `annotate()`?
 ```
 
-<img src="man/figures/README-example2-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
 
 ### Lifecycle
 

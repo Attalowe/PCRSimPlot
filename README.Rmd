@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# {{ packagename }}: PCR Simulation and Plotting <img src="man/figures/logo.png" align="right" width="130"/>
+# PCRSimPlot : PCR Simulation and Plotting <img src="man/figures/logo.png" align="right" width="130"/>
 
 <!-- badges: start -->
 
@@ -33,12 +33,12 @@ coverage](https://codecov.io/gh/Attalowe/PCRSimPlot/branch/main/graph/badge.svg)
 
 <!-- badges: end -->
 
-**{{ packagename }}** is an R package for simulating and plotting PCR (Polymerase Chain Reaction) data. It includes functions for generating PCR data from specified parameters and visualizing the results.
+**PCRSimPlot** is an R package for simulating and plotting PCR (Polymerase Chain Reaction) data. It includes functions for generating PCR data from specified parameters and visualizing the results.
 
 
 ## Installation
 
-You can install the development version of **{{ packagename }}** from [GitHub](https://Attalowe.github.io/PCRSimPlot/).
+You can install the development version of **PCRSimPlot** from [GitHub](https://Attalowe.github.io/PCRSimPlot/).
 
 ```{r message=FALSE}
 if (!require("pak")) install.packages("pak")
@@ -85,7 +85,7 @@ A ggplot object visualizing the PCR data with a line plot of fluorescence over c
 
 This is a basic example which shows you how to solve a common problem:
 
-```{r, example2}
+```{r, warning=FALSE}
 
 result <- simulate_pcr(N0 = 10, E = 1.8)
 plot <- plot_pcr(result$pcr_data, result$Ct)
