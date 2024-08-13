@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# {{ packagename }}: PCR Simulation and Plotting <img src="man/figures/logo.svg" align="right" width="130"/>
+# {{ packagename }}: PCR Simulation and Plotting <img src="man/figures/logo.png" align="right" width="130"/>
 
 <!-- badges: start -->
 
@@ -42,7 +42,7 @@ You can install the development version of **{{ packagename }}** from [GitHub](h
 
 ```{r message=FALSE}
 if (!require("pak")) install.packages("pak")
-pak::pak("{{ gh_repo }}")
+pak::pak("Attalowe/PCRSimPlot")
 library(PCRSimPlot)
 ```
 
@@ -64,7 +64,7 @@ print(result$Ct)
 
 
 
-`plot_pcr()`
+* `plot_pcr()`
 Plots the simulated PCR data, showing fluorescence over cycles and the cycle threshold (Ct).
 # Usage
 
@@ -85,7 +85,7 @@ A ggplot object visualizing the PCR data with a line plot of fluorescence over c
 
 This is a basic example which shows you how to solve a common problem:
 
-```{r example2}
+```{r, example2}
 
 result <- simulate_pcr(N0 = 10, E = 1.8)
 plot <- plot_pcr(result$pcr_data, result$Ct)
