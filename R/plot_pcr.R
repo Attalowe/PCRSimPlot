@@ -8,7 +8,7 @@
 #' @import ggplot2
 #' @export
 plot_pcr <- function(pcr_data, Ct){
-  ggplot(pcr_data, aes(x = "Cycle", y = "Fluorescence")) +
+  ggplot(pcr_data, aes(x = Cycle, y = Fluorescence)) +
     geom_line(color = "blue") +
     geom_vline(xintercept = Ct, linetype = "dashed", color = "red") + # Dashed line for Ct
     geom_hline(yintercept = 10000, linetype = "solid", color = "black") + # Solid line for the threshold
@@ -19,3 +19,7 @@ plot_pcr <- function(pcr_data, Ct){
     theme_minimal()
 
 }
+
+
+
+
