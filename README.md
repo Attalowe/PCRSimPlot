@@ -52,12 +52,12 @@ library(PCRSimPlot)
 result <- simulate_pcr(N0 = 10, E = 1.8, threshold = 10000)
 head(result$pcr_data)
 #>   Cycle      DNA Fluorescence
-#> 1     1  10.0000     1027.388
-#> 2     2  32.4000     1090.010
-#> 3     3  58.3200     1162.474
-#> 4     4 104.9760     1292.908
-#> 5     5 188.9568     1527.689
-#> 6     6 340.1222     1950.296
+#> 1     1  10.0000     1041.592
+#> 2     2  32.4000     1128.094
+#> 3     3  58.3200     1228.189
+#> 4     4 104.9760     1408.361
+#> 5     5 188.9568     1732.669
+#> 6     6 340.1222     2316.424
 print(result$Ct)
 #> [1] 9
 ```
@@ -105,8 +105,8 @@ requests](https://github.com/%7B%7B%20gh_repo%20%7D%7D/pulls).
 
 ### Code of Conduct
 
-Please note that the {{ packagename }} project is released with a
-[Contributor Code of
+Please note that the PCRSimPlot project is released with a [Contributor
+Code of
 Conduct](https://github.com/epiverse-trace/.github/blob/main/CODE_OF_CONDUCT.md).
 By contributing to this project, you agree to abide by its terms.
 
