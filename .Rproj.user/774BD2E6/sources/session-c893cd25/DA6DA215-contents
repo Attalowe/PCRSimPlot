@@ -1,0 +1,5 @@
+library("devtools")
+install()
+load_all()
+check()
+build_site()
