@@ -1,9 +1,10 @@
 pandoc: 3.1.11
-pkgdown: 2.1.0
+pkgdown: 2.0.9
 pkgdown_sha: ~
 articles:
   PCRSimPlot: PCRSimPlot.html
-last_built: 2024-08-12T11:51Z
+last_built: 2024-08-16T11:00Z
 urls:
   reference: https://attalowe.github.io/PCRSimPlot/reference
   article: https://attalowe.github.io/PCRSimPlot/articles
+

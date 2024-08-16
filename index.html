@@ -5,6 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Description: This package provides functions for simulating and plotting PCR data. It includes tools to generate synthetic PCR data and visualize it using ggplot2.">
 <title>PCR Simulation and Plotting • PCRSimPlot</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -14,42 +15,55 @@
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.4.2/css/all.min.css" rel="stylesheet">
-<link href="deps/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="PCR Simulation and Plotting">
-<meta name="description" content="Description: This package provides functions for simulating and plotting PCR data. It includes tools to generate synthetic PCR data and visualize it using ggplot2.">
+<script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
+<!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js" integrity="sha512-7O5pXpc0oCRrxk8RUfDYFgn0nO1t+jLuIOQdOMRp4APB7uZ4vSjspzp5y6YDtDs4VzUSTbWzBFZ/LKJhnyFOKw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="PCR Simulation and Plotting">
 <meta property="og:description" content="Description: This package provides functions for simulating and plotting PCR data. It includes tools to generate synthetic PCR data and visualize it using ggplot2.">
 <meta property="og:image" content="https://attalowe.github.io/PCRSimPlot/logo.png">
+<!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
+    
 
-
-    <nav class="navbar navbar-expand-lg fixed-top bg-light" data-bs-theme="light" aria-label="Site navigation"><div class="container">
-
+    <nav class="navbar fixed-top navbar-light navbar-expand-lg bg-light" data-bs-theme="light"><div class="container">
+    
     <a class="navbar-brand me-2" href="index.html">PCRSimPlot</a>
 
     <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9000</small>
 
-
+    
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
-<li class="nav-item"><a class="nav-link" href="articles/PCRSimPlot.html">Get started</a></li>
-<li class="nav-item"><a class="nav-link" href="reference/index.html">Reference</a></li>
+<li class="nav-item">
+  <a class="nav-link" href="articles/PCRSimPlot.html">Get started</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="reference/index.html">Reference</a>
+</li>
       </ul>
-<ul class="navbar-nav">
-<li class="nav-item"><form class="form-inline" role="search">
- <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="search.json">
-</form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/Attalowe/PCRSimPlot/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<form class="form-inline my-2 my-lg-0" role="search">
+        <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="search.json" id="search-input" placeholder="Search for" autocomplete="off">
+</form>
+
+      <ul class="navbar-nav">
+<li class="nav-item">
+  <a class="external-link nav-link" href="https://github.com/Attalowe/PCRSimPlot/" aria-label="github">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
 </div>
 
-
+    
   </div>
 </nav><div class="container template-home">
 <div class="row">
@@ -59,111 +73,64 @@
 </h1>
 </div>
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- `packagename` is extracted from the DESCRIPTION file -->
+<!-- `gh_repo` is extracted via a special environment variable in GitHub Actions -->
+<!-- README.md is generated from README.Rmd. Please edit that file -->
 </div>
 <div class="section level1">
-<h1 id="pcrsimplot-1">PCRSimPlot<a class="anchor" aria-label="anchor" href="#pcrsimplot-1"></a>
+<h1 id="pcrsimplot-pcr-simulation-and-plotting-">PCRSimPlot: PCR Simulation and Plotting <a class="anchor" aria-label="anchor" href="#pcrsimplot-pcr-simulation-and-plotting-"></a>
 </h1>
-<figure><img src="reference/figures/logo.png" alt="PCRSimPLOT Logo"><figcaption aria-hidden="true">
-PCRSimPLOT Logo
-</figcaption></figure><!-- badges: start --><!-- badges: end --><p>PCRSimPlot is an R package for simulating and plotting PCR (Polymerase Chain Reaction) data. The package includes functions for generating PCR data based on specified parameters and visualizing the results.</p>
+<!-- badges: start -->
+
+<!-- badges: end -->
+<p><strong>PCRSimPlot</strong> is an R package for simulating and plotting PCR (Polymerase Chain Reaction) data. It includes functions for generating PCR data from specified parameters and visualizing the results.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>You can install the development version of PCRSimPlot like so:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>You can install the development version of <span class="sc">**</span>PCRSimulation<span class="sc">**</span> from GitHub using the <span class="st">`</span><span class="at">devtools</span><span class="st">`</span> package<span class="sc">:</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="st">```</span><span class="at">r</span></span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="at"># Install devtools if you haven't already</span></span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="at"># install.packages("devtools")</span></span>
-<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="at"># Install PCRSimPlot</span></span>
-<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="at">devtools::install_github("AttaLowe/PCRSimPlot")</span></span>
-<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="at"># Functions</span></span>
-<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="st">`</span><span class="fu">simulate_pcr</span>()<span class="st">`</span></span>
-<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a><span class="at">Simulates PCR data based on initial DNA concentration, amplification efficiency, and a fluorescence threshold.</span></span>
-<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a><span class="at"># Usage</span></span>
-<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a><span class="st">```</span>r</span>
-<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a><span class="fu">simulate_pcr</span>(N0, E, <span class="at">threshold =</span> <span class="dv">10000</span>)</span>
-<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a><span class="st">```</span><span class="at">r</span></span>
-<span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a><span class="at">Arguments:</span></span>
-<span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" tabindex="-1"></a><span class="at">N0: Initial DNA concentration (numeric). For example, 10.</span></span>
-<span id="cb1-22"><a href="#cb1-22" tabindex="-1"></a><span class="at">E: Amplification efficiency (numeric, between 1 and 2). For example, 1.8.</span></span>
-<span id="cb1-23"><a href="#cb1-23" tabindex="-1"></a><span class="at">threshold: Fluorescence threshold for detecting the PCR signal (numeric, default is 10000).</span></span>
-<span id="cb1-24"><a href="#cb1-24" tabindex="-1"></a><span class="at">Returns:</span></span>
-<span id="cb1-25"><a href="#cb1-25" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" tabindex="-1"></a><span class="at">A list with two components:</span></span>
-<span id="cb1-27"><a href="#cb1-27" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" tabindex="-1"></a><span class="at">pcr_data: A data frame containing the simulated PCR data with columns Cycle, DNA, and Fluorescence.</span></span>
-<span id="cb1-29"><a href="#cb1-29" tabindex="-1"></a><span class="at">Ct: The cycle threshold (Ct) value at which the fluorescence exceeds the threshold.</span></span></code></pre></div>
+<p>You can install the development version of <strong>PCRSimPlot</strong> from <a href="https://Attalowe.github.io/PCRSimPlot/" class="external-link">GitHub</a>.</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="st"><a href="https://pak.r-lib.org/" class="external-link">"pak"</a></span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"pak"</span><span class="op">)</span></span>
+<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"Attalowe/PCRSimPlot"</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Attalowe/PCRSimPlot" class="external-link">PCRSimPlot</a></span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
+<h2 id="overview-of-the-functions-in-pcrsimplot">Overview of the functions in {PCRSimPlot}<a class="anchor" aria-label="anchor" href="#overview-of-the-functions-in-pcrsimplot"></a>
 </h2>
-<p>This is a basic example which shows you how to solve a common problem:</p>
+<ul>
+<li>
+<code><a href="reference/simulate_pcr.html">simulate_pcr()</a></code>: simulates PCR data based on initial DNA concentration (<code>N0</code>), amplification efficiency (<code>E</code>), and a fluorescence threshold (<code>threshold</code>). The function returns a <code>list</code> with two elements:</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>
+<em>pcr_data</em>: A data frame containing the simulated PCR data with columns Cycle, DNA, and Fluorescence.</li>
+<li>
+<em>Ct</em>: The cycle threshold (Ct) value at which the fluorescence exceeds the threshold.</li>
+</ol>
+<div class="section level3">
+<h3 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
+</h3>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Attalowe/PCRSimPlot" class="external-link">PCRSimPlot</a></span><span class="op">)</span></span>
-<span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/simulate_pcr.html">simulate_pcr</a></span><span class="op">(</span>N0 <span class="op">=</span> <span class="fl">10</span>, E <span class="op">=</span> <span class="fl">1.8</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">result</span><span class="op">$</span><span class="va">pcr_data</span><span class="op">)</span></span>
-<span><span class="co">#&gt;    Cycle          DNA Fluorescence</span></span>
-<span><span class="co">#&gt; 1      1 1.000000e+01 1.025858e+03</span></span>
-<span><span class="co">#&gt; 2      2 3.240000e+01 1.074638e+03</span></span>
-<span><span class="co">#&gt; 3      3 5.832000e+01 1.131084e+03</span></span>
-<span><span class="co">#&gt; 4      4 1.049760e+02 1.232687e+03</span></span>
-<span><span class="co">#&gt; 5      5 1.889568e+02 1.415572e+03</span></span>
-<span><span class="co">#&gt; 6      6 3.401222e+02 1.744765e+03</span></span>
-<span><span class="co">#&gt; 7      7 6.122200e+02 2.337313e+03</span></span>
-<span><span class="co">#&gt; 8      8 1.101996e+03 3.403898e+03</span></span>
-<span><span class="co">#&gt; 9      9 1.983593e+03 5.323752e+03</span></span>
-<span><span class="co">#&gt; 10    10 3.570467e+03 8.779489e+03</span></span>
-<span><span class="co">#&gt; 11    11 6.426841e+03 1.499982e+04</span></span>
-<span><span class="co">#&gt; 12    12 1.156831e+04 2.619640e+04</span></span>
-<span><span class="co">#&gt; 13    13 2.082296e+04 4.635026e+04</span></span>
-<span><span class="co">#&gt; 14    14 3.748134e+04 8.262721e+04</span></span>
-<span><span class="co">#&gt; 15    15 6.746641e+04 1.479257e+05</span></span>
-<span><span class="co">#&gt; 16    16 1.214395e+05 2.654630e+05</span></span>
-<span><span class="co">#&gt; 17    17 2.185912e+05 4.770301e+05</span></span>
-<span><span class="co">#&gt; 18    18 3.934641e+05 8.578510e+05</span></span>
-<span><span class="co">#&gt; 19    19 7.082353e+05 1.543329e+06</span></span>
-<span><span class="co">#&gt; 20    20 1.274824e+06 2.777188e+06</span></span>
-<span><span class="co">#&gt; 21    21 2.294683e+06 4.998135e+06</span></span>
-<span><span class="co">#&gt; 22    22 4.130429e+06 8.995840e+06</span></span>
-<span><span class="co">#&gt; 23    23 7.434771e+06 1.619171e+07</span></span>
-<span><span class="co">#&gt; 24    24 1.338259e+07 2.914427e+07</span></span>
-<span><span class="co">#&gt; 25    25 2.408866e+07 5.245889e+07</span></span>
-<span><span class="co">#&gt; 26    26 4.335959e+07 9.442520e+07</span></span>
-<span><span class="co">#&gt; 27    27 7.804726e+07 1.699645e+08</span></span>
-<span><span class="co">#&gt; 28    28 1.404851e+08 3.059354e+08</span></span>
-<span><span class="co">#&gt; 29    29 2.528731e+08 5.506829e+08</span></span>
-<span><span class="co">#&gt; 30    30 4.551716e+08 9.912284e+08</span></span>
-<span><span class="co">#&gt; 31    31 8.193089e+08 1.784210e+09</span></span>
-<span><span class="co">#&gt; 32    32 1.474756e+09 3.211578e+09</span></span>
-<span><span class="co">#&gt; 33    33 2.654561e+09 5.780839e+09</span></span>
-<span><span class="co">#&gt; 34    34 4.778209e+09 1.040551e+10</span></span>
-<span><span class="co">#&gt; 35    35 8.600777e+09 1.872992e+10</span></span>
-<span><span class="co">#&gt; 36    36 1.548140e+10 3.371385e+10</span></span>
-<span><span class="co">#&gt; 37    37 2.786652e+10 6.068493e+10</span></span>
-<span><span class="co">#&gt; 38    38 5.015973e+10 1.092329e+11</span></span>
-<span><span class="co">#&gt; 39    39 9.028751e+10 1.966192e+11</span></span>
-<span><span class="co">#&gt; 40    40 1.625175e+11 3.539145e+11</span></span>
+<code class="sourceCode R"><span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/simulate_pcr.html">simulate_pcr</a></span><span class="op">(</span>N0 <span class="op">=</span> <span class="fl">10</span>, E <span class="op">=</span> <span class="fl">1.8</span>, threshold <span class="op">=</span> <span class="fl">10000</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">result</span><span class="op">$</span><span class="va">pcr_data</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   Cycle      DNA Fluorescence</span></span>
+<span><span class="co">#&gt; 1     1  10.0000     1031.942</span></span>
+<span><span class="co">#&gt; 2     2  32.4000     1093.936</span></span>
+<span><span class="co">#&gt; 3     3  58.3200     1165.671</span></span>
+<span><span class="co">#&gt; 4     4 104.9760     1294.794</span></span>
+<span><span class="co">#&gt; 5     5 188.9568     1527.216</span></span>
+<span><span class="co">#&gt; 6     6 340.1222     1945.576</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">result</span><span class="op">$</span><span class="va">Ct</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 10</span></span></code></pre></div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="st">`</span><span class="at">plot_pcr()</span><span class="st">`</span></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>Plots the simulated PCR data, showing fluorescence over cycles and the cycle <span class="fu">threshold</span> (Ct).</span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co"># Usage</span></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="st">```</span><span class="at">r</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="at">plot_pcr(pcr_data, Ct)</span></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="st">```</span>r</span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>Arguments<span class="sc">:</span></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>pcr_data<span class="sc">:</span> A data frame containing the PCR <span class="fu">data</span> (typically from <span class="fu">simulate_pcr</span>()).</span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>Ct<span class="sc">:</span> The cycle <span class="fu">threshold</span> (Ct) value.</span>
-<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>Returns<span class="sc">:</span></span>
-<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a></span>
-<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a>A ggplot object visualizing the PCR data with a line plot of fluorescence over cycles, including a vertical line indicating the Ct valu</span></code></pre></div>
+<span><span class="co">#&gt; [1] 9</span></span></code></pre></div>
+<ul>
+<li>
+<code><a href="reference/plot_pcr.html">plot_pcr()</a></code> Plots the simulated PCR data, showing fluorescence over cycles and the cycle threshold (Ct). # Usage</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="reference/plot_pcr.html">plot_pcr</a></span><span class="op">(</span><span class="va">pcr_data</span>, <span class="va">Ct</span><span class="op">)</span></span></code></pre></div>
+<p>Arguments:</p>
+<p>pcr_data: A data frame containing the PCR data (typically from simulate_pcr()). Ct: The cycle threshold (Ct) value. Returns:</p>
+<p>A ggplot object visualizing the PCR data with a line plot of fluorescence over cycles, including a vertical line indicating the Ct valu</p>
+</div>
 </div>
 <div class="section level2">
 <h2 id="example-1">Example<a class="anchor" aria-label="anchor" href="#example-1"></a>
@@ -175,66 +142,40 @@ PCRSimPLOT Logo
 <span><span class="va">plot</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/plot_pcr.html">plot_pcr</a></span><span class="op">(</span><span class="va">result</span><span class="op">$</span><span class="va">pcr_data</span>, <span class="va">result</span><span class="op">$</span><span class="va">Ct</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">plot</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-example2-1.png" width="100%"></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co"># Example</span></span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>Here’s a full example of how to use the package<span class="sc">:</span></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="st">```</span><span class="at">r</span></span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="at"># Load the package</span></span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="at">library(PCRSimPlot)</span></span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="at"># Simulate PCR data</span></span>
-<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a><span class="at">result &lt;- simulate_pcr(N0 = 10, E = 1.8)</span></span>
-<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="at"># Print the simulated data and Ct value</span></span>
-<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a><span class="at">print(result$pcr_data)</span></span>
-<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a><span class="at">#&gt;    Cycle          DNA Fluorescence</span></span>
-<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a><span class="at">#&gt; 1      1 1.000000e+01 1.044057e+03</span></span>
-<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a><span class="at">#&gt; 2      2 3.240000e+01 1.144980e+03</span></span>
-<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a><span class="at">#&gt; 3      3 5.832000e+01 1.261762e+03</span></span>
-<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a><span class="at">#&gt; 4      4 1.049760e+02 1.471970e+03</span></span>
-<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a><span class="at">#&gt; 5      5 1.889568e+02 1.850345e+03</span></span>
-<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a><span class="at">#&gt; 6      6 3.401222e+02 2.531419e+03</span></span>
-<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a><span class="at">#&gt; 7      7 6.122200e+02 3.757352e+03</span></span>
-<span id="cb5-21"><a href="#cb5-21" tabindex="-1"></a><span class="at">#&gt; 8      8 1.101996e+03 5.964031e+03</span></span>
-<span id="cb5-22"><a href="#cb5-22" tabindex="-1"></a><span class="at">#&gt; 9      9 1.983593e+03 9.936054e+03</span></span>
-<span id="cb5-23"><a href="#cb5-23" tabindex="-1"></a><span class="at">#&gt; 10    10 3.570467e+03 1.708570e+04</span></span>
-<span id="cb5-24"><a href="#cb5-24" tabindex="-1"></a><span class="at">#&gt; 11    11 6.426841e+03 2.995505e+04</span></span>
-<span id="cb5-25"><a href="#cb5-25" tabindex="-1"></a><span class="at">#&gt; 12    12 1.156831e+04 5.311989e+04</span></span>
-<span id="cb5-26"><a href="#cb5-26" tabindex="-1"></a><span class="at">#&gt; 13    13 2.082296e+04 9.481660e+04</span></span>
-<span id="cb5-27"><a href="#cb5-27" tabindex="-1"></a><span class="at">#&gt; 14    14 3.748134e+04 1.698707e+05</span></span>
-<span id="cb5-28"><a href="#cb5-28" tabindex="-1"></a><span class="at">#&gt; 15    15 6.746641e+04 3.049680e+05</span></span>
-<span id="cb5-29"><a href="#cb5-29" tabindex="-1"></a><span class="at">#&gt; 16    16 1.214395e+05 5.481432e+05</span></span>
-<span id="cb5-30"><a href="#cb5-30" tabindex="-1"></a><span class="at">#&gt; 17    17 2.185912e+05 9.858586e+05</span></span>
-<span id="cb5-31"><a href="#cb5-31" tabindex="-1"></a><span class="at">#&gt; 18    18 3.934641e+05 1.773746e+06</span></span>
-<span id="cb5-32"><a href="#cb5-32" tabindex="-1"></a><span class="at">#&gt; 19    19 7.082353e+05 3.191944e+06</span></span>
-<span id="cb5-33"><a href="#cb5-33" tabindex="-1"></a><span class="at">#&gt; 20    20 1.274824e+06 5.744700e+06</span></span>
-<span id="cb5-34"><a href="#cb5-34" tabindex="-1"></a><span class="at">#&gt; 21    21 2.294683e+06 1.033966e+07</span></span>
-<span id="cb5-35"><a href="#cb5-35" tabindex="-1"></a><span class="at">#&gt; 22    22 4.130429e+06 1.861059e+07</span></span>
-<span id="cb5-36"><a href="#cb5-36" tabindex="-1"></a><span class="at">#&gt; 23    23 7.434771e+06 3.349826e+07</span></span>
-<span id="cb5-37"><a href="#cb5-37" tabindex="-1"></a><span class="at">#&gt; 24    24 1.338259e+07 6.029608e+07</span></span>
-<span id="cb5-38"><a href="#cb5-38" tabindex="-1"></a><span class="at">#&gt; 25    25 2.408866e+07 1.085321e+08</span></span>
-<span id="cb5-39"><a href="#cb5-39" tabindex="-1"></a><span class="at">#&gt; 26    26 4.335959e+07 1.953571e+08</span></span>
-<span id="cb5-40"><a href="#cb5-40" tabindex="-1"></a><span class="at">#&gt; 27    27 7.804726e+07 3.516419e+08</span></span>
-<span id="cb5-41"><a href="#cb5-41" tabindex="-1"></a><span class="at">#&gt; 28    28 1.404851e+08 6.329546e+08</span></span>
-<span id="cb5-42"><a href="#cb5-42" tabindex="-1"></a><span class="at">#&gt; 29    29 2.528731e+08 1.139317e+09</span></span>
-<span id="cb5-43"><a href="#cb5-43" tabindex="-1"></a><span class="at">#&gt; 30    30 4.551716e+08 2.050771e+09</span></span>
-<span id="cb5-44"><a href="#cb5-44" tabindex="-1"></a><span class="at">#&gt; 31    31 8.193089e+08 3.691386e+09</span></span>
-<span id="cb5-45"><a href="#cb5-45" tabindex="-1"></a><span class="at">#&gt; 32    32 1.474756e+09 6.644495e+09</span></span>
-<span id="cb5-46"><a href="#cb5-46" tabindex="-1"></a><span class="at">#&gt; 33    33 2.654561e+09 1.196009e+10</span></span>
-<span id="cb5-47"><a href="#cb5-47" tabindex="-1"></a><span class="at">#&gt; 34    34 4.778209e+09 2.152816e+10</span></span>
-<span id="cb5-48"><a href="#cb5-48" tabindex="-1"></a><span class="at">#&gt; 35    35 8.600777e+09 3.875069e+10</span></span>
-<span id="cb5-49"><a href="#cb5-49" tabindex="-1"></a><span class="at">#&gt; 36    36 1.548140e+10 6.975124e+10</span></span>
-<span id="cb5-50"><a href="#cb5-50" tabindex="-1"></a><span class="at">#&gt; 37    37 2.786652e+10 1.255522e+11</span></span>
-<span id="cb5-51"><a href="#cb5-51" tabindex="-1"></a><span class="at">#&gt; 38    38 5.015973e+10 2.259940e+11</span></span>
-<span id="cb5-52"><a href="#cb5-52" tabindex="-1"></a><span class="at">#&gt; 39    39 9.028751e+10 4.067892e+11</span></span>
-<span id="cb5-53"><a href="#cb5-53" tabindex="-1"></a><span class="at">#&gt; 40    40 1.625175e+11 7.322206e+11</span></span>
-<span id="cb5-54"><a href="#cb5-54" tabindex="-1"></a><span class="at">print(result$Ct)</span></span>
-<span id="cb5-55"><a href="#cb5-55" tabindex="-1"></a><span class="at">#&gt; [1] 9</span></span>
-<span id="cb5-56"><a href="#cb5-56" tabindex="-1"></a></span>
-<span id="cb5-57"><a href="#cb5-57" tabindex="-1"></a><span class="at"># Plot the results</span></span>
-<span id="cb5-58"><a href="#cb5-58" tabindex="-1"></a><span class="at">plot &lt;- plot_pcr(result$pcr_data, result$Ct)</span></span>
-<span id="cb5-59"><a href="#cb5-59" tabindex="-1"></a><span class="at">print(plot)</span></span></code></pre></div>
-<p><img src="reference/figures/README-example3-1.png" width="100%"></p>
+<div class="section level3">
+<h3 id="lifecycle">Lifecycle<a class="anchor" aria-label="anchor" href="#lifecycle"></a>
+</h3>
+<p>This package is currently an <em>experimental</em>, as defined by the <a href="https://www.reconverse.org/lifecycle.html" class="external-link">RECON software lifecycle</a>. This means that it is functional, but interfaces and functionalities may change over time, testing and documentation may be lacking.</p>
+</div>
+<div class="section level3">
+<h3 id="contributions">Contributions<a class="anchor" aria-label="anchor" href="#contributions"></a>
+</h3>
+<p>Contributions are welcome via <a href="https://github.com/%7B%7B%20gh_repo%20%7D%7D/pulls" class="external-link">pull requests</a>.</p>
+</div>
+<div class="section level3">
+<h3 id="code-of-conduct">Code of Conduct<a class="anchor" aria-label="anchor" href="#code-of-conduct"></a>
+</h3>
+<p>Please note that the PCRSimPlot project is released with a <a href="https://github.com/epiverse-trace/.github/blob/main/CODE_OF_CONDUCT.md" class="external-link">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+</div>
+</div>
+<div class="section level2">
+<h2 id="citing-this-package">Citing this package<a class="anchor" aria-label="anchor" href="#citing-this-package"></a>
+</h2>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/citation.html" class="external-link">citation</a></span><span class="op">(</span><span class="st">"PCRSimPlot"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; To cite package 'PCRSimPlot' in publications use:</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;   Lowe A (2024). _PCRSimPlot: PCR Simulation and Plotting_.</span></span>
+<span><span class="co">#&gt;   &lt;https://Attalowe.github.io/PCRSimPlot/&gt;.</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; A BibTeX entry for LaTeX users is</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;   @Manual{,</span></span>
+<span><span class="co">#&gt;     title = {PCRSimPlot: PCR Simulation and Plotting},</span></span>
+<span><span class="co">#&gt;     author = {Atta Lowe},</span></span>
+<span><span class="co">#&gt;     year = {2024},</span></span>
+<span><span class="co">#&gt;     url = {https://Attalowe.github.io/PCRSimPlot/},</span></span>
+<span><span class="co">#&gt;   }</span></span></code></pre></div>
 </div>
 </div>
 
@@ -269,7 +210,15 @@ PCRSimPLOT Logo
 </ul>
 </div>
 
-
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://opensource.org/licenses/MIT" class="external-link"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a></li>
+<li><a href="https://github.com/Attalowe/PCRSimPlot/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/Attalowe/PCRSimPlot/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://app.codecov.io/gh/Attalowe/PCRSimPlot?branch=main" class="external-link"><img src="https://codecov.io/gh/Attalowe/PCRSimPlot/branch/main/graph/badge.svg" alt="Codecov test coverage"></a></li>
+<li><a href="https://www.reconverse.org/lifecycle.html#experimental" class="external-link"><img src="https://raw.githubusercontent.com/reconverse/reconverse.github.io/master/images/badge-experimental.svg" alt="lifecycle-experimental"></a></li>
+</ul>
+</div>
 
   </aside>
 </div>
@@ -280,15 +229,15 @@ PCRSimPLOT Logo
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
 </div>
 
     </footer>
 </div>
 
+  
 
-
-
+  
 
   </body>
 </html>
